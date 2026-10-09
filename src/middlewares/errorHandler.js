@@ -1,0 +1,5 @@
+// Express llama a esta función cuando algo lanza un error en una ruta.
+module.exports = (err, req, res, next) => {
+  console.error(err)
+  res.status(err.status || 500).json({ mensaje: err.message || 'Error interno del servidor' })
+}
